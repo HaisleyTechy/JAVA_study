@@ -1,0 +1,37 @@
+#git 원격 저장소 clone 및 원격 브랜치 가져오기
+git clone시 최초엔 리모트의 master 브랜치만 로컬에 존재한다.
+이때 -t 등의 옵션을 주어 checkout을 하면 로컬에 원하는 브랜치가 생성되는 동시에 해당 브랜치로 이동한다.
+옵션을 주지 않으면 단순히 해당 브랜치를 원격저장소를 통해 참조할 뿐 로컬에서 commit이나 push등을 할 수 없다.
+git clone url : 원격 브랜치를 클론.
+git branch -a : 원격&로컬의 모든 브랜치를 표시
+git branch -r : 원격 브랜치만 표시
+git checkout -t 원격저장소이름/브랜치이름 : 원격저장소의 해당 브랜치를 로컬에도 생성한 뒤 해당 브랜치로 이동
+#브랜치간의 변경사항 합치기
+git merge [브랜치명] : 하나의 브랜치와 다른 브랜치의 변경 이력 전체를 합치는 방법
+*//
+git checkout -b alternate master
+touch about.html
+git add about.html
+git commit -m "add new file"
+git checkout master
+git merge alternate
+/*
+git merge --squash [브랜치명] : 한 브랜치의 이력을 압축하여 다른 브랜치의 최신 커밋 하나로 만드는 방법
+*//
+git checkout -b contact master
+touch contact.html
+git add contact.html
+git commit -m 'add with first email'
+git commit -am 'add secondary email'
+git checkout master
+git merge --squash contact
+git commit -m 'add contact page'
+/*
+git cherry-pick [커밋명] : 다른 브랜치에서 하나의 커밋을 가져와서 현재 브랜치에 적용하는 방법
+*//
+git checkout contact
+vi contact.html //추가된 커밋명이 9941f44일경우
+git checkout master
+git cherry-pick -n 9941f44
+#https://learngitbranching.js.org/?locale=ko
+
