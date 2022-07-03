@@ -5,19 +5,20 @@ public class Practice {
         int distance;
         distance = speed * time;
         return distance;
-
     }
-    void excute() {
-        double result = getRunCatDistance(5,18);
-        System.out.println(result);
+    public String computeDifference(int num1, int num2){
+        String result = Integer.toString(Math.abs(num1 - num2));
+        return result;
+    }
+    public int ControlFlow(int score){
+        int result = score / 10;
+        return result;
     }
     public static void main(String[] args) {
         Practice test1 = new Practice();
-        test1.excute();
+        System.out.println(test1.ControlFlow(35));
     }
 }
-
-
 
 
 
