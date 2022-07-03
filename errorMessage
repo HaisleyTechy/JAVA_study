@@ -1,2 +1,4 @@
 #비 static 메서드 'convertScoreToGradeWithPlusAndMinus(int)'은(는) static 컨텍스트에서 참조할 수 없습니다
 존재하지 않는 무언가를 부를 수는 없습니다.객체를 만들지 않았으므로 비 정적 메소드가 아직 없습니다.
+#.NoSuchElementException
+없는 공간의 값을 꺼내려고 하면 발생 ex)delimiter 더이상없는 StringTokenizer 연속2번사용
