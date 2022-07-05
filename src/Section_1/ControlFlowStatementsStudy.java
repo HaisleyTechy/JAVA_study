@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ControlFlowStatementsStudy {
     static Scanner myInput = new Scanner(System.in);
-
     public static void ifStudy() {
         String dice = myInput.nextLine(); //주사위 번호 입력값을 받아옵니다.
 
@@ -84,25 +83,37 @@ public class ControlFlowStatementsStudy {
         } return Grade;
     }
 
+    public static int sumTo(int num) {
+        int result = 0;
+        for(int numAdd = 0; numAdd <= num ;numAdd++ ){
+            result+= numAdd;
+        } return result;
+    }
 
 
     public static void main(String[] args) {
-        System.out.println("if 혹은 switch 혹은 점수를 입력:");
+        System.out.println("method 혹은 점수를 입력:");
         String decisionIn = myInput.nextLine();
         switch (decisionIn) {
             case "if":
+                System.out.println("1~6 중 입력:");
                 ifStudy();
                 break;
             case "switch":
+                System.out.println("1~6 중 입력:");
                 switchStudy();
+                break;
+            case "sumTo":
+                System.out.println("입력값까지의 팩토리얼");
+                int sumToValue = myInput.nextInt();
+                System.out.println(sumTo(sumToValue));
                 break;
             default:
                 System.out.println(convertScoreToGradeWithPlusAndMinus(Integer.parseInt(decisionIn)));
-                break;
         }
-
     }
 }
+
 
 
 

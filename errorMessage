@@ -2,3 +2,8 @@
 존재하지 않는 무언가를 부를 수는 없습니다.객체를 만들지 않았으므로 비 정적 메소드가 아직 없습니다.
 #.NoSuchElementException
 없는 공간의 값을 꺼내려고 하면 발생 ex)delimiter 더이상없는 StringTokenizer 연속2번사용
+#error: int cannot be dereferenced
+reference: 참조, 포인터 자체- dereference: 포인터가 가리키는 값 (Value)
+int 는 값 자체이기 때문에 포인터라는 개념이 없어서포인터 연산 할 수 없다
+Integer.toString(int)로 해결 https://stackoverflow.com/questions/55100699/int-cannot-be-dereferenced-java
+
